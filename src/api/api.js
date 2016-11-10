@@ -1,7 +1,7 @@
 var express = require('express')
 var router = express.Router();
 var MailParser = require('mailparser').MailParser;
-var mailparser = new MailParser();
+var mailparser = new MailParser([debug:true]);
 
 // middleware that is specific to this router
 router.use(function timeLog (req, res, next) {
