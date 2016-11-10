@@ -2,7 +2,6 @@ var express = require('express')
 var router = express.Router();
 var MailParser = require('mailparser').MailParser;
 var mailparser = new MailParser({
-  debug:true,
   defaultCharset:'UTF-8'
 });
 
