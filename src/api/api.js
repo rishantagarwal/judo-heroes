@@ -23,9 +23,14 @@ router.get('/about', function (req, res) {
 })
 
 mailparser.on("end",function(mail_object){
-  console.log("From:", mail_object.from); //[{address:'sender@example.com',name:'Sender Name'}]
-  console.log("Subject:", mail_object.subject); // Hello world!
-  console.log("Text body:", mail_object.text); // How are you today?
+  var from = mail_object.from;
+  var subject = mail_object.subject;
+  var text = mail_object.text;
+  console.log("-------------------------------");
+  console.log(from,subject,text);
+  // console.log("From:", mail_object.from); //[{address:'sender@example.com',name:'Sender Name'}]
+  // console.log("Subject:", mail_object.subject); // Hello world!
+  // console.log("Text body:", mail_object.text); // How are you today?
 });
 
 module.exports = router
