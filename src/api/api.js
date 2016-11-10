@@ -1,7 +1,10 @@
 var express = require('express')
 var router = express.Router();
 var MailParser = require('mailparser').MailParser;
-var mailparser = new MailParser({debug:true});
+var mailparser = new MailParser({
+  debug:true,
+  defaultCharset:'UTF-8'
+});
 
 // middleware that is specific to this router
 router.use(function timeLog (req, res, next) {
